@@ -7,7 +7,7 @@ php:
       - index.php
       - server.php
 js:
-  finder:
+  finder:vvvv
     not-name:
       - webpack.mix.js
 css: true
