@@ -162,7 +162,7 @@ class SuperadminController extends Controller
     }
 
     public function update_data_kategori(Request $request){
-        \App\kategori::where('id_kategori',$request->id_kategori)->update([
+        \App\Kategori::where('id_kategori',$request->id_kategori)->update([
             'nama_kategori' => $request->kategori,
         ]);
 
