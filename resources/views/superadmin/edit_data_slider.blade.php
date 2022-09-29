@@ -36,7 +36,7 @@
     <div id="isi">
     <section class="content">
       <div class="container-fluid">
-    <form action="/superadmin/update_data_slider" method="post">
+    <form action="/superadmin/update_data_slider" method="post" enctype="multipart/form-data">
      {{csrf_field()}}
     <div class="row">
         <!-- left column -->

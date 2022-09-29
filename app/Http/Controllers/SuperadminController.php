@@ -170,6 +170,10 @@ class SuperadminController extends Controller
     }
 
     public function update_data_slider(Request $request){
+
+        $this->validate($request, ['gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048']);
+
+        $file = $request->file('gambar');
         $file = $request->file('gambar');
         $folder = 'images';
 
@@ -178,7 +182,7 @@ class SuperadminController extends Controller
             \App\Slider::where('id',$request->id)->update([
             'title' => $request->title,
             'uploader' => $request->uploader,
-            'gambar' => $file->getClientOriginalName()
+            'foto' => $file->getClientOriginalName()
         ]);
         }
         else{
