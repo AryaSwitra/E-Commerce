@@ -62,7 +62,7 @@ Route::post('/postregistersuperadmin', 'SuperadminController@create_admin');
 Route::get('/superadmin', 'PagesController@indexsuperadmin');
 Route::get('/superadmin/kategori','SuperadminController@kategori');
 Route::get('/superadmin/addKategori', 'SuperadminController@tambah_kategori');
-Route::post('/postkategori', 'SuperadminController@createKategori');
+Route::post('/postKategori', 'SuperadminController@createKategori');
 Route::get('/superadmin/data_pelanggan', 'SuperadminController@data_pelanggan');
 Route::get('/superadmin/testimonial', 'SuperadminController@testimonial');
 Route::get('/superadmin/testimonial_baru', 'SuperadminController@testimonial_baru');

@@ -36,7 +36,7 @@
     <div id="isi">
     <section class="content">
       <div class="container-fluid">
-    <form action="/postkategori" method="post">
+    <form action="/postKategori" method="post">
 	   {{csrf_field()}}
     <div class="row">
         <!-- left column -->

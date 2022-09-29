@@ -292,7 +292,7 @@ class SuperadminController extends Controller
     }
 
     public function createKategori(Request $request){
-        $kat = new \App\kategori;
+        $kat = new \App\Kategori;
 
         $kat->nama_kategori = $request->kategori;
         $kat->save();
