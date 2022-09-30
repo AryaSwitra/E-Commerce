@@ -52,6 +52,7 @@
         <div class="box-body">
           <div class="form-group"><label>Judul Produk</label>
              @foreach($datas as $data)
+            <input hidden="" name="id" value="{{$data->id_produk}}">
             <input class="form-control" type="text" name="title"  id="nama_produk" size="30" value="{{$data->title}}" />
             @endforeach
           </div>
@@ -122,7 +123,7 @@
           </div>
         </div><!-- /.box-body -->
         <div style = "position:relative; left:40px; top:2px;">
-          <button  type="submit" name="submit" class="btn btn-success">Submit</button>
+          <button name="submit" value="kirim_data" class="btn btn-success">Submit</button>
           <a href="{{url('/superadmin')}}" class="btn btn-primary">kembali</a>
         </div>
         <br>

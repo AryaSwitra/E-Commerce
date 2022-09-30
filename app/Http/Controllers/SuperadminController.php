@@ -171,13 +171,12 @@ class SuperadminController extends Controller
 
     public function update_data_slider(Request $request){
 
-        $this->validate($request, ['gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048']);
-
-        $file = $request->file('gambar');
         $file = $request->file('gambar');
         $folder = 'images';
 
-        if ($file == true) {
+        if ($request->submit == "kirim_data" && $file == true) {
+            $this->validate($request, ['gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048']);
+
             $file->move($folder,$file->getClientOriginalName());
             \App\Slider::where('id',$request->id)->update([
             'title' => $request->title,
@@ -185,7 +184,7 @@ class SuperadminController extends Controller
             'foto' => $file->getClientOriginalName()
         ]);
         }
-        else{
+        elseif($request->submit == "kirim_data"){
             \App\Slider::where('id',$request->id)->update([
             'title' => $request->title,
             'uploader' => $request->uploader
@@ -198,15 +197,14 @@ class SuperadminController extends Controller
     }
 
     public function update_data_produk(Request $request){
-        // dd($request->id);
-        // $this->validate($request, ['gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048']);
-
+        
         $file = $request->file('gambar');
         $folder = 'images';
-        // dd($file);
 
         
-        if ($file == true) {
+        if ($request->submit == "kirim_data" && $file == true) {
+            $this->validate($request, ['gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048']);
+       
             $file->move($folder,$file->getClientOriginalName());
             \App\Produk::where('id_produk',$request->id)->update([
             'title' => $request->title,
@@ -219,7 +217,7 @@ class SuperadminController extends Controller
             'minimal_pemesanan' => $request->minimal_pemesanan
         ]);
         }
-        else{
+        elseif($request->submit == "kirim_data"){
             \App\Produk::where('id_produk',$request->id)->update([
             'title' => $request->title,
             'deskripsi' => $request->deskripsi,

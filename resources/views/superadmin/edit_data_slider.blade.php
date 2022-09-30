@@ -60,10 +60,10 @@
                 @endforeach
               </div>
               <div class="box-footer" style = "position:relative; left:20px; bottom:12px;">
-                <input type="submit" name="submit" class="btn btn-success">
-                <!-- <button type="submit" name="submit" class="btn btn-success">Submit</button> -->
+                <button name="submit" value="kirim_data" class="btn btn-success">submiit</button>
                 <a href="{{url('/superadmin')}}" class="btn btn-primary">Kembali</a>
               </div>
+              
             </div><!-- /.box-body -->
           </div><!-- /.box -->
           <!-- left column -->
