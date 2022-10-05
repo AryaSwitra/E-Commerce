@@ -72,31 +72,67 @@
 
                             <!-- Start Single Content -->
                             <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                                <form id="registrasi" class="login" action="/postregister" method="post">
-                                    {{csrf_field()}}
-                                    <input type="text" name="nama" placeholder="Name*">
-                                    <input type="email" name="email" placeholder="Email*">
-                                    <input type="text" name="alamat" placeholder="Alamat*">
-                                    <input type="text" name="no_hp" placeholder="Nomor Handphone*">
-                                    <input type="password" name="password" placeholder="Password*">
-                                    <br>
-                                        <div class="row" style="margin-bottom: -50px;">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                <ul style="display: flex; margin: 0 auto 51px; max-width: 370px; padding-left: 4%;" role="tablist">
-                                                    <li role="presentation">pria</li>
-                                                    <input required="" style="border: 0px;width: 20%;height: 1em;" type="radio" name="jenis_kelamin" value="pria">
+                                <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-                                                    <li role="presentation">wanita</li>
-                                                     <input required="" style="border: 0px;width: 20%;height: 1em; margin-top: 5px;" type="radio" name="jenis_kelamin" value="wanita">
-                                                </ul>
-                                            </div>
-                                        </div> <br>
-                                    
-                                </form>
-                                <div class="htc__login__btn">
-                                    <button form="registrasi" type="submit" class="buttonn buttonn1" style="">register</button>
-                                    
-                                </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                             </div>
                             <!-- End Single Content -->
                         </div>

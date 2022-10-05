@@ -46,8 +46,14 @@
             <div class="box-body">
               <div class="form-group"><label>Register Admin</label>
                 <input type="text" class="form-control" name="nama" placeholder="nama"> <br>
-                <input type="text" class="form-control" name="email" placeholder="email"> <br>
-                <input type="text" class="form-control" name="password" placeholder="password">
+                <input type="email" class="form-control" name="email" placeholder="email"> <br>
+                <!-- <input type="password" class="form-control" name="password" placeholder="password"> -->
+                <div class="input-group mb-3">
+                <input class="form-control password" id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <span class="input-group-text togglePassword" id="">
+                    <i data-feather="eye" style="cursor: pointer"></i>
+                </span>
+              </div>
               </div>
             </div><!-- /.box-body -->
             <div class="box-footer" style = "position:relative; left:20px; bottom:12px;">

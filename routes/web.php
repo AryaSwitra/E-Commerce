@@ -224,7 +224,8 @@ Route::post('/snapfinish', 'SnapController@finish');
 // Route::get('/logout', 'AuthController@logout');
 // Route::post('/postregister', 'AuthController@postregister');
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
